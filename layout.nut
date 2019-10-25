@@ -66,7 +66,7 @@ snap.preserve_aspect_ratio = true;
 
 //now position and pinch surface of snap
 //adjust the below values for the game video preview snap
-surface_snap.set_pos(flx*0.1745, fly*0.247, flw*0.345, flh*0.50);
+surface_snap.set_pos(flx*0.1745, fly*0.247, flw*0.35, flh*0.47);
 surface_snap.skew_y = 0;
 surface_snap.skew_x = 0;
 surface_snap.pinch_y = 0;
@@ -178,13 +178,13 @@ fe.add_transition_callback("sound_transitions")
 // Game information to show inside text box frame
 
 //Year text info
-local texty = fe.add_text("[Year]", flx*0.15, fly*0.87, flw*0.13, flh*0.055 );
+local texty = fe.add_text("[Year]", flx*0.15, fly*0.86, flw*0.13, flh*0.055 );
 texty.set_rgb( 255, 255, 255 );
 //texty.style = Style.Bold;
 //texty.align = Align.Left;
 
 //Title text info
-local textt = fe.add_text( "[Title]", flx*0.0575, fly*0.962, flw*0.6, flh*0.0275  );
+local textt = fe.add_text( "[Title]", flx*0.0575, fly*0.96, flw*0.6, flh*0.0275  );
 textt.set_rgb( 225, 255, 255 );
 //textt.style = Style.Bold;
 textt.align = Align.Centre;
@@ -192,7 +192,7 @@ textt.rotation = 0;
 textt.word_wrap = false;
 
 //Emulator text info
-local textemu = fe.add_text( "[Emulator]", flx* 0.285, fly*0.90, flw*0.6, flh*0.025  );
+local textemu = fe.add_text( "[Emulator]", flx* 0.285, fly*0.89, flw*0.6, flh*0.025  );
 textemu.set_rgb( 225, 255, 255 );
 //textemu.style = Style.Bold;
 textemu.align = Align.Left;
@@ -200,21 +200,21 @@ textemu.rotation = 0;
 textemu.word_wrap = false;
 
 //display filter info
-local filter = fe.add_text( "Filter: [ListFilterName]", flx*0.285, fly*0.87, flw*0.5, flh*0.025 );
+local filter = fe.add_text( "Filter: [ListFilterName]", flx*0.285, fly*0.86, flw*0.5, flh*0.025 );
 filter.set_rgb( 255, 255, 255 );
 //filter.style = Style.Italic;
 filter.align = Align.Left;
 filter.rotation = 0;
 
 //display game info
-local gamecount = fe.add_text( "Game Count: [ListEntry]-[ListSize]       Played Count: [PlayedCount]", flx*0.115, fly*0.87, flw*0.5, flh*0.025 );
+local gamecount = fe.add_text( "Game Count: [ListEntry]-[ListSize]       Played Count: [PlayedCount]", flx*0.115, fly*0.86, flw*0.5, flh*0.025 );
 gamecount.set_rgb( 255, 255, 255 );
 //gamecount.style = Style.Italic;
 gamecount.align = Align.Right;
 gamecount.rotation = 0;
 
 //category icons 
-local glogo1 = fe.add_image("glogos/unknown1.png", flx*0.125, fly*0.87, flw*0.045, flh*0.055);
+local glogo1 = fe.add_image("glogos/unknown1.png", flx*0.125, fly*0.86, flw*0.045, flh*0.055);
 glogo1.trigger = Transition.EndNavigation;
 
 class GenreImage1
