@@ -8,7 +8,8 @@ class UserConfig {
    </ label="Select spinwheel art", help="The artwork to spin", options="wheel", order=5 /> orbit_art="wheel";
    </ label="Wheel transition time", help="Time in milliseconds for wheel spin.", order=6 /> transition_ms="25";  
    </ label="Wheel fade time", help="Time in milliseconds to fade the wheel.", options="Off,2500,5000,7500,10000", order=7 /> wheel_fade_ms="5000"; 
-</ label=" ", help=" ", options=" ", order=16 /> divider5="";
+   </ label="Wheel pointer", help="Select wheel pointer", options="blue,green,red", order=10 /> enable_pointer="red";
+   </ label=" ", help=" ", options=" ", order=16 /> divider5="";
 </ label="--------    Miscellaneous    --------", help="Miscellaneous options", order=17 /> uct6="select below";
    </ label="Enable random text colors", help=" Select random text colors.", options="Yes,No", order=18 /> enable_colors="Yes";
    </ label="Enable monitor static effect", help="Show static effect when snap is null", options="Yes,No", order=19 /> enable_static="No"; 
@@ -94,6 +95,103 @@ local w_art = fe.add_image("wheel/[DisplayName]", flx*0.25, fly*0.009, flw*0.2, 
 w_art.preserve_aspect_ratio=true;
 w_art.alpha=255;
 
+// The following sets up which pointer to show on the wheel
+//property animation - wheel pointers
+if ( my_config["enable_pointer"] == "blue") 
+{
+local point = fe.add_image("pointerblue.png", flx*0.895, fly*0.4, flw*0.1, flh*0.225);
+
+local alpha_cfg = {
+    when = Transition.ToNewSelection,
+    property = "alpha",
+    start = 110,
+    end = 255,
+    time = 300
+}
+animation.add( PropertyAnimation( point, alpha_cfg ) );
+
+local movey_cfg = {
+    when = Transition.ToNewSelection,
+    property = "y",
+    start = point.y,
+    end = point.y,
+    time = 200
+}
+animation.add( PropertyAnimation( point, movey_cfg ) );
+
+local movex_cfg = {
+    when = Transition.ToNewSelection,
+    property = "x",
+    start = flx*0.83,
+    end = point.x,
+    time = 200	
+}	
+animation.add( PropertyAnimation( point, movex_cfg ) );
+}
+
+if ( my_config["enable_pointer"] == "green") 
+{
+local point = fe.add_image("pointergreen.png", flx*0.895, fly*0.4, flw*0.1, flh*0.225);
+
+local alpha_cfg = {
+    when = Transition.ToNewSelection,
+    property = "alpha",
+    start = 110,
+    end = 255,
+    time = 300
+}
+animation.add( PropertyAnimation( point, alpha_cfg ) );
+
+local movey_cfg = {
+    when = Transition.ToNewSelection,
+    property = "y",
+    start = point.y,
+    end = point.y,
+    time = 200
+}
+animation.add( PropertyAnimation( point, movey_cfg ) );
+
+local movex_cfg = {
+    when = Transition.ToNewSelection,
+    property = "x",
+    start = flx*0.83,
+    end = point.x,
+    time = 200	
+}	
+animation.add( PropertyAnimation( point, movex_cfg ) );
+}
+
+if ( my_config["enable_pointer"] == "red") 
+{
+local point = fe.add_image("pointerred.png", flx*0.895, fly*0.4, flw*0.1, flh*0.225);
+
+local alpha_cfg = {
+    when = Transition.ToNewSelection,
+    property = "alpha",
+    start = 110,
+    end = 255,
+    time = 300
+}
+animation.add( PropertyAnimation( point, alpha_cfg ) );
+
+local movey_cfg = {
+    when = Transition.ToNewSelection,
+    property = "y",
+    start = point.y,
+    end = point.y,
+    time = 200
+}
+animation.add( PropertyAnimation( point, movey_cfg ) );
+
+local movex_cfg = {
+    when = Transition.ToNewSelection,
+    property = "x",
+    start = flx*0.83,
+    end = point.x,
+    time = 200	
+}	
+animation.add( PropertyAnimation( point, movex_cfg ) );
+}
 //////////////////////////////////////////////////////////////////////////////////
 // The following section sets up what type and wheel and displays the users choice
 
